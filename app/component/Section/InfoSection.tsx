@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import me from '../../../public/me.jpg'
 
-function Info() {
+function InfoSection() {
   return (
     <div className='w-full h-150 scroll-mt-15 flex flex-col items-center justify-center text-2xl font-bold'>
 
@@ -23,4 +23,4 @@ function Info() {
   )
 }
 
-export default Info
+export default InfoSection
