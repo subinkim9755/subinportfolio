@@ -15,10 +15,8 @@ function Header() {
 
   return (
     <div className='fixed top-0 left-0 z-20 w-full bg-white text-black flex flex-col items-center shadow-md'>
-      <div className='w-full h-15 bg-white text-black flex items-center justify-between px-7'>
-        <button
-
-        
+      <div className='w-full max-w-[1200px] h-15 bg-white text-black flex items-center justify-between px-7'>
+        <button        
           type='button'
           onClick={() => {
             setIsMenuOpen(false)
@@ -30,26 +28,33 @@ function Header() {
           KSB&apos;s Portfolio
         </button>
 
+
+      <div className='hidden md:flex gap-4'>
+        <HeaderMenu Text="ABOUT ME" targetId="ABOUT ME" onNavigate={() => setIsMenuOpen(false)}  />
+        <HeaderMenu Text="SKILLS" targetId="SKILLS" onNavigate={() => setIsMenuOpen(false)}  />
+        <HeaderMenu Text="PROJECTS" targetId="PROJECTS" onNavigate={() => setIsMenuOpen(false)} />
+      </div>
       <button
         type='button'
         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         aria-expanded={isMenuOpen}
         onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
-        className='w-12 h-12 flex items-center justify-center cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none '
+        className='md:hidden w-10 h-10 flex items-center justify-center cursor-pointer border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none '
       >
         <Image
           src={isMenuOpen ? menuActive : menu}
           alt={isMenuOpen ? 'Close menu' : 'Open menu'}
-          width={40}
-          height={40}
+          width={30}
+          height={30}
         />
       </button>
       </div>
+      
 
-      <div className={`${isMenuOpen ? 'flex' : 'hidden'} absolute top-full left-0 z-50 w-full bg-white text-black flex-col items-center shadow-md`}>
-        <HeaderMenu Text="About Me" targetId="about-me" onNavigate={() => setIsMenuOpen(false)} />
-        <HeaderMenu Text="Skills" targetId="skills" onNavigate={() => setIsMenuOpen(false)} />
-        <HeaderMenu Text="Projects" targetId="projects" onNavigate={() => setIsMenuOpen(false)} />
+      <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:hidden absolute top-full left-0 z-50 w-full bg-white text-black flex-col items-center shadow-md`}>
+        <HeaderMenu Text="ABOUT ME" targetId="ABOUT ME" onNavigate={() => setIsMenuOpen(false)} />
+        <HeaderMenu Text="SKILLS" targetId="SKILLS" onNavigate={() => setIsMenuOpen(false)}  />
+        <HeaderMenu Text="PROJECTS" targetId="PROJECTS" onNavigate={() => setIsMenuOpen(false)} />
       </div>
     </div>
   )
