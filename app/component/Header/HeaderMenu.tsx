@@ -9,6 +9,7 @@ function HeaderMenu({
   targetId: string
   onNavigate?: () => void
 }) {
+ 
   const handleClick = () => {
     document.getElementById(targetId)?.scrollIntoView({
       behavior: 'smooth',
@@ -21,10 +22,10 @@ function HeaderMenu({
     <button
       type='button'
       onClick={handleClick}
-      className='w-full h-15 bg-white text-gray-500 text-lg font-semibold flex flex-col items-center justify-between shadow-md hover:text-[#FB8C00] cursor-pointer'
+      className={`w-full md:w-auto  bg-white text-gray-500 font-semibold flex flex-col items-center justify-between hover:text-[#FB8C00] cursor-pointer`}
     >
-      <div className='w-full h-15 bg-white flex items-center justify-between px-7 shadow-md'>
-        <h2>{Text}</h2>
+      <div className={`w-full h-12 md:w-30  px-4   bg-white flex items-center justify-between md:justify-center gap-2 md:gap-0   `}>
+        <h2 className='whitespace-nowrap'>{Text}</h2>
       </div>
     </button>
   )

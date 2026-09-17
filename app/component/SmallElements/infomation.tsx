@@ -1,3 +1,4 @@
+import Link from "next/dist/client/link";
 import Image from "next/image";
 
 type InfomationProps = {
@@ -15,7 +16,13 @@ function Infomation({ src, subject, content }: InfomationProps) {
 
       <div>
         <p className="text-sm text-gray-500">{subject}</p>
-        <p className="text-base font-semibold text-gray-800">{content}</p>
+        {/^https?:\/\//i.test(content) ? (
+          <Link href={content} target="_blank" rel="noopener noreferrer">
+            <p className="text-base font-semibold text-blue-500">{content}</p>
+          </Link>
+        ) : (
+          <p className="text-base font-semibold text-gray-800">{content}</p>
+        )}
       </div>
     </div>
   );
