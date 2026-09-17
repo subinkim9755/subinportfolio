@@ -1,22 +1,16 @@
 import React from 'react'
 import Title from '../SmallElements/Title'
-
+import { TMainSectionuProps } from '@/app/types/sections.type';
 function MainSection({
-  text,
-  children,
-  bgColor,
-  id,
+  mainSectionProps
 }: {
-  text: string
-  children: React.ReactNode
-  bgColor?: string
-  id?: string
+  mainSectionProps: TMainSectionuProps
 }) {
   return (
-    <div id={id} className={`w-full max-w-[1200px] h-150 scroll-mt-15 flex flex-col items-center justify-center text-2xl font-bold ${bgColor || 'bg-white'}`}>        <div className='w-full h-150 scroll-mt-15 flex flex-col items-center justify-center text-2xl font-bold'>
-      <Title text={text} targetId={id} />
+    <div id={mainSectionProps.id} className={`w-full  min-h-150 h-auto scroll-mt-15 flex flex-col items-center justify-center text-2xl font-bold ${mainSectionProps.bgColor || 'bg-white'}`}>        <div className='w-full h-auto py-12 flex flex-col items-center justify-center text-2xl font-bold'>
+      <Title titleProps={mainSectionProps} />
     </div>
-    {children}
+    {mainSectionProps.children}
 
       
     </div>
