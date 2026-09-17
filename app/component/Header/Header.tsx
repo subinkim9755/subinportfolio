@@ -30,9 +30,9 @@ function Header() {
 
 
       <div className='hidden md:flex gap-4'>
-        <HeaderMenu Text="ABOUT ME" targetId="ABOUT ME" onNavigate={() => setIsMenuOpen(false)}  />
-        <HeaderMenu Text="SKILLS" targetId="SKILLS" onNavigate={() => setIsMenuOpen(false)}  />
-        <HeaderMenu Text="PROJECTS" targetId="PROJECTS" onNavigate={() => setIsMenuOpen(false)} />
+        <HeaderMenu HeaderMenuProps={{ Text: "ABOUT ME", targetId: "ABOUT ME", onNavigate: () => setIsMenuOpen(false) }} />
+        <HeaderMenu HeaderMenuProps={{ Text: "SKILLS", targetId: "SKILLS", onNavigate: () => setIsMenuOpen(false) }} />
+        <HeaderMenu HeaderMenuProps={{ Text: "PROJECTS", targetId: "PROJECTS", onNavigate: () => setIsMenuOpen(false) }} />
       </div>
       <button
         type='button'
@@ -52,9 +52,9 @@ function Header() {
       
 
       <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:hidden absolute top-full left-0 z-50 w-full bg-white text-black flex-col items-center shadow-md`}>
-        <HeaderMenu Text="ABOUT ME" targetId="ABOUT ME" onNavigate={() => setIsMenuOpen(false)} />
-        <HeaderMenu Text="SKILLS" targetId="SKILLS" onNavigate={() => setIsMenuOpen(false)}  />
-        <HeaderMenu Text="PROJECTS" targetId="PROJECTS" onNavigate={() => setIsMenuOpen(false)} />
+        <HeaderMenu HeaderMenuProps={{ Text: "ABOUT ME", targetId: "ABOUT ME", onNavigate: () => setIsMenuOpen(false) }} />
+        <HeaderMenu HeaderMenuProps={{ Text: "SKILLS", targetId: "SKILLS", onNavigate: () => setIsMenuOpen(false) }} />
+        <HeaderMenu HeaderMenuProps={{ Text: "PROJECTS", targetId: "PROJECTS", onNavigate: () => setIsMenuOpen(false) }} />
       </div>
     </div>
   )
