@@ -2,7 +2,7 @@ import Infomation from "./component/SmallElements/infomation";
 import InfoSection from "./component/Section/InfoSection"
 import MainSection from "./component/Section/MainSection"
 import SkillRow from "./component/Skills/SkillRow";
-
+import DepthCarousel from "./component/PortFolio/DepthCarousel";
 const infoList = [
   { src: "/icons/user.png", subject: "이름", content: "김수빈" },  
   { src: "/icons/email.png", subject: "이메일", content: "a01072669755@gmail.com" },
@@ -10,6 +10,14 @@ const infoList = [
   { src: "/icons/phone.png", subject: "연락처", content: "010-7266-9755" },
   { src: "/icons/education.png", subject: "학력", content: "세종대학교 스마트기기학과", secondContent: "세종대학교 컴퓨터공학과" },
   { src: "/icons/git.png", subject: "GitHub", content: "https://github.com/subinkim9755"},
+];
+
+const items = [
+  { image: 'https://picsum.photos/seed/a/800/1000', alt: 'One' },
+  { image: 'https://picsum.photos/seed/b/800/1000', alt: 'Two' },
+  { image: 'https://picsum.photos/seed/c/800/1000', alt: 'Three' },
+  { image: 'https://picsum.photos/seed/d/800/1000', alt: 'Four' },
+  { image: 'https://picsum.photos/seed/e/800/1000', alt: 'Five' }
 ];
 
 export default function Home() {
@@ -38,7 +46,29 @@ export default function Home() {
       ) }} />
     <MainSection mainSectionProps={{ text: "PROJECTS", bgColor: "bg-gray-600", id: "PROJECTS", children: (
       <div className="w-full h-200 flex items-center justify-center text-2xl font-bold">
-        이게 내 포폴이 될거임
+
+          <DepthCarousel
+            items={items}
+            depth={180}
+            spread={105}
+            tilt={30}
+            tiltDirection="right"
+            perspective={1500}
+            visibleCards={5}
+            falloff={0.15}
+            blur={5}
+            autoplay={false}
+            loop
+            cardWidth={270}
+            cardHeight={420}
+            radius={10}
+            tint="#0f1f9e"
+            duration={800}
+            ease="power3.out"
+            autoplayDelay={3200}
+            showControls
+            showIndicators
+          />
       </div>
       ) }} />
     </div>
