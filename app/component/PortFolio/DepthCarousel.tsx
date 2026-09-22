@@ -68,12 +68,12 @@ interface DragState {
 }
 
 const DEFAULT_ITEMS: DepthCarouselItem[] = [
-  { image: 'https://picsum.photos/seed/depth1/800/1000', alt: 'Slide 1' },
-  { image: 'https://picsum.photos/seed/depth2/800/1000', alt: 'Slide 2' },
-  { image: 'https://picsum.photos/seed/depth3/800/1000', alt: 'Slide 3' },
-  { image: 'https://picsum.photos/seed/depth4/800/1000', alt: 'Slide 4' },
-  { image: 'https://picsum.photos/seed/depth5/800/1000', alt: 'Slide 5' },
-  { image: 'https://picsum.photos/seed/depth6/800/1000', alt: 'Slide 6' }
+  { image: 'https://picsum.photos/seed/depth1/500/800', alt: 'Slide 1' },
+  { image: 'https://picsum.photos/seed/depth2/500/800', alt: 'Slide 2' },
+  { image: 'https://picsum.photos/seed/depth3/500/800', alt: 'Slide 3' },
+  { image: 'https://picsum.photos/seed/depth4/500/800', alt: 'Slide 4' },
+  { image: 'https://picsum.photos/seed/depth5/500/800', alt: 'Slide 5' },
+  { image: 'https://picsum.photos/seed/depth6/500/800', alt: 'Slide 6' }
 ];
 
 const clamp = (v: number, min: number, max: number) => Math.min(Math.max(v, min), max);
